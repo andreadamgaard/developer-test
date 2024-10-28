@@ -8,6 +8,8 @@ You have been provided 3 different APIs (a symbols API, a prices API, and a mark
 
 ```text
 https://api.frontendexpert.io/api/fe/stock-symbols
+https://api.frontendexpert.io/api/fe/stock-prices
+https://api.frontendexpert.io/api/fe/stock-market-caps
 ```
 
 The symbols API returns a JSON-formatted array of objects, each representing one of the 500 top US-based stocks by market-cap. Each object has 2 keys: "name", and "symbol". These symbols are the same symbols used in the prices and market-cap APIs. For example, the return value of this API might look like this:
@@ -20,10 +22,6 @@ The symbols API returns a JSON-formatted array of objects, each representing one
   },
   ...
 ]
-```
-
-```text
-https://api.frontendexpert.io/api/fe/stock-prices
 ```
 
 The prices API takes one query parameter called `symbols`. This value should be a JSON stringified array of requested stock symbols. For example: a request to this API would look like this:
