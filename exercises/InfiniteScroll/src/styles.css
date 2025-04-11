@@ -1,43 +1,132 @@
 /* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: #333;
 }
 
 /* Basic layout styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
 header h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Add your CSS below here */
+:root {
+  --bg: #181718;
+  --dark-gray: #222222;
+  --light-gray: #343334;
+  --blue: #7cb8e8;
+  --off-white: #f4f5f6;
+  --scroll-bar: #f4f5f6;
+  --scroll-gutter: #fafafa;
+}
+main {
+  padding-bottom: 40px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: monospace;
+}
+
+#testimonial-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--dark-gray);
+  height: 39rem;
+  width: 36rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+  scrollbar-gutter: var(--scroll-gutter);
+  scrollbar-color: var(--scroll-bar);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--off-white);
+}
+
+.testimonial {
+  display: flex;
+  color: var(--off-white);
+  background-color: var(--light-gray);
+  border-left: 4px solid var(--blue);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.img {
+  border-radius: 100px;
+  width: 3.75rem;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 0.1rem 0rem 0rem 1rem;
+}
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.message {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.175rem;
+}
+
+.loading {
+  color: var(--off-white);
+  display: flex;
+  justify-content: center;
+}
+.loading-svg {
+  fill: var(--off-white);
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
